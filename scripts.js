@@ -19,6 +19,21 @@ For example, given the sequence [2, 1, 5, 7, 2, 0, 5], your algorithm should pri
 
 */
 
+const sortArray = (array) => {
+  
+}
+
+
+const showMed = (array) => {
+  let now = [];
+  for (i = 0; i<array.length; i++) {
+    now.push(array.[i]);
+
+  }
+}
+
+let test1 = [2,1,5,7,2,0,5];
+
 
 $(document).ready(function() {
   $('#form1').submit(function(event) {
