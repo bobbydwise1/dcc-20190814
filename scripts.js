@@ -42,6 +42,7 @@ const showMed = (array) => {
       console.log('odd=',now)
       output.push(now[Math.floor(now.length/2)])
     }
+    console.log('output so far = ', output)
   }
   return output
 }
@@ -54,6 +55,6 @@ $(document).ready(function() {
   event.preventDefault();
   let input1 = $('#input1').val();
   let parsed = JSON.parse(input1);
-  $('#output-section-1').text(1);
+  $('#output-section-1').text(JSON.stringify(showMed(parsed)));
   })
 });
