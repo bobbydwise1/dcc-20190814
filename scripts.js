@@ -49,7 +49,6 @@ const showMed = (array) => {
 
 let test1 = [2,1,5,7,2,0,5];
 
-
 $(document).ready(function() {
   $('#form1').submit(function(event) {
   event.preventDefault();
