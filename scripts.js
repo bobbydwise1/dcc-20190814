@@ -19,17 +19,32 @@ For example, given the sequence [2, 1, 5, 7, 2, 0, 5], your algorithm should pri
 
 */
 
+const copyArray = (array) => {
+  let copy = array.slice();
+  return copy;
+}
+
 const sortArray = (array) => {
-  
+  let copy = copyArray(array)
+  return copy.sort(function(a,b){return a-b});
 }
 
 
 const showMed = (array) => {
-  let now = [];
-  for (i = 0; i<array.length; i++) {
-    now.push(array.[i]);
-
+  let output = [array[0]];
+  for (i = 1; i<array.length; i++) {
+    let now = array.slice(0,i+1);
+    now = sortArray(now);
+    if ((i+1)%2 == 0) {
+      console.log('odd=',array[i])
+      output.push(array[Math.floor(i/2)])
+    } else {
+      console.log('even=',array[i])
+      output.push((array[i/2-1]+array[i/2+1])/2)
+    }
+    console.log(output)
   }
+  return output
 }
 
 let test1 = [2,1,5,7,2,0,5];
