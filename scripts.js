@@ -16,7 +16,6 @@ For example, given the sequence [2, 1, 5, 7, 2, 0, 5], your algorithm should pri
 2
 2
 2
-
 */
 
 const copyArray = (array) => {
@@ -29,20 +28,20 @@ const sortArray = (array) => {
   return copy.sort(function(a,b){return a-b});
 }
 
-
 const showMed = (array) => {
   let output = [array[0]];
   for (i = 1; i<array.length; i++) {
     let now = array.slice(0,i+1);
     now = sortArray(now);
     if ((i+1)%2 == 0) {
-      console.log('odd=',array[i])
-      output.push(array[Math.floor(i/2)])
+      console.log('even=',now)
+      let middlelow = now[now.length/2-1]
+      let middlehigh = now[now.length/2]
+      output.push((middlelow+middlehigh)/2)
     } else {
-      console.log('even=',array[i])
-      output.push((array[i/2-1]+array[i/2+1])/2)
+      console.log('odd=',now)
+      output.push(now[Math.floor(now.length/2)])
     }
-    console.log(output)
   }
   return output
 }
@@ -54,6 +53,7 @@ $(document).ready(function() {
   $('#form1').submit(function(event) {
   event.preventDefault();
   let input1 = $('#input1').val();
+  let parsed = JSON.parse(input1);
   $('#output-section-1').text(1);
   })
 });
